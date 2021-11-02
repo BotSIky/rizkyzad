@@ -1112,14 +1112,8 @@ module.exports = syaa = async (syaa, mek) => {
       msg.mek = mek.message.viewOnceMessage.message;
       msg.mek[Object.keys(msg.mek)[0]].viewOnce = false;
       syaa.copyNForward(m.chat, msg);
-    }
-    if (
-      isGroup &&
-      isAntihidetag &&
-      m.message[m.mtype]?.contextInfo?.mentionedJid?.length ==
-        groupMembers.length
-    ) {
-      console.log(
+   
+    console.log(
         color("[ANTI-HIDETAG]", "red"),
         color(`@${sender.split("@")[0]} mengirim pesan hidetag`, "white")
       );
